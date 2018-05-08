@@ -6,7 +6,7 @@ Sawdust patterns
 
 // todo: some kind of named element.
 
-PsawDustElement : Pattern {
+PsawDustElement {
 	var <>value, <>dur;
 
 	*new { |value = 0, dur = 1|
@@ -15,13 +15,6 @@ PsawDustElement : Pattern {
 
 	*new1 { |value, dur|
 		^super.newCopyArgs(value, dur)
-	}
-
-	// this is debatable, maybe better to
-	// pass elements around first, later convert?
-
-	embedInStream { |inval|
-		(value: value, dur: dur).yield
 	}
 
 	printOn { |stream|
@@ -81,7 +74,6 @@ PsawDustMerge : PsawDustLink {
 
 	embedInStream { |inval|
 		var streams, outval;
-		// this could be optimized
 		repeats.do {
 			streams = elements.collect { |x| x.asStream };
 			while {
