@@ -1,0 +1,9 @@
+(
+	\name: 			"SAWDUST",
+	\summary:		"a version of the classic SAWDUST by Herbert Brün, Gary Grossman, Jody Kravitz, Keith Johnson, and Arun Chandra",
+	\author: 		"Julian Rohrhuber, Marcus Schmickler, and students",
+	\organization: 	"Institute for Music and Media Duesseldorf",
+	\country: 		"Germany",
+	\since: 		"2018"
+	\version: 		"0.1"
+)
