@@ -92,6 +92,42 @@ PsawDustMerge : PsawDustLink {
 	}
 }
 
+SawDustDef : Pattern {
+	var <>name, <>source;
+	classvar <>all;
+
+	*initClass {
+		 all = IdentityDictionary.new;
+	}
+
+	*new { |name, source|
+		var existing = all.at(name);
+		var new;
+		if(existing.notNil) {
+			if(source.notNil) { existing.source = source };
+			^existing
+		};
+		new = super.newCopyArgs(name, source);
+		all.put(name, new);
+		^new
+	}
+
+	repeats {
+		^source.repeats
+	}
+
+	embedElementsInStream { |inval|
+		^source.embedElementsInStream(inval)
+	}
+
+	embedInStream { |inval|
+		^source.embedInStream(inval)
+	}
+
+}
+
+
+
 SawDust {
 
 

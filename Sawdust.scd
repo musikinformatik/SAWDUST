@@ -1,5 +1,21 @@
 
 
+
+(
+f = { |x, n| p = (x.asStream.nextN(n).postln ++ (0 ! 5)).plot(minval:0, maxval:500); p.plotMode = \steps };
+SawDustDef(\a, PsawDustLink([SawDustDef(\x, 100), 200, 300], 6));
+SawDustDef(\b, PsawDustLink([150, 400], 4));
+SawDustDef(\c, PsawDustLink([450, 250, 350], 2));
+PsawDustMingle([SawDustDef(\a), SawDustDef(\b), SawDustDef(\c)]);
+)
+
+f.(x, 5)
+
+
+
+
+
+
 f = { |x| p = (x.asStream.all ++ (0 ! 5)).plot(minval:0, maxval:500); p.plotMode = \steps };
 
 (
